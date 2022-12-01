@@ -20,7 +20,7 @@ This repository demonstrates advanced viewing of clash raw data by Model Coordin
  
 ## Thumbnail
 
-![thumbnail](/thumbnail.png)
+![thumbnail](/help/main.png)
 
 ## Live version
 
