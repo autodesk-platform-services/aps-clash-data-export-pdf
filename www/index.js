@@ -5,28 +5,28 @@ const global_clashRawView= new ClashRawView()
 const global_clashBreakdownView= new ClashBreakdownView()
 const global_clashMatrixView= new ClashMatrixView()  
 const global_ClashPDF = new ClashPDF() 
-const global_forgeViewer= new ForgeViewer()
+const global_APSViewer= new APSViewer()
 const global_navHelp= new NavHelp()
 const global_Utility = new Utility()
 
 $(document).ready(function () {
 
  
-  $('#iconlogin').click(global_oAuth.forgeSignIn);
+  $('#iconlogin').click(global_oAuth.APSSignIn);
 
-  var currentToken = global_oAuth.getForgeToken(); 
+  var currentToken = global_oAuth.getAPSToken(); 
 
   if (currentToken === '')
-    $('#signInButton').click(global_oAuth.forgeSignIn); 
+    $('#signInButton').click(global_oAuth.APSSignIn); 
   else {
     (async()=>{
-      let profile = await global_oAuth.getForgeUserProfile() 
+      let profile = await global_oAuth.getAPSUserProfile() 
       
       $('#signInProfileImage').removeClass();  
       $('#signInProfileImage').html('<img src="' + profile.picture + '" height="30"/>')
       $('#signInButtonText').text(profile.name);
       $('#signInButtonText').attr('title', 'Click to Sign Out');
-      $('#signInButton').click(global_oAuth.forgeLogoff); 
+      $('#signInButton').click(global_oAuth.APSLogoff); 
     
       let r = await global_dmProjects.refreshBIMHubs()
       if(!r)
@@ -89,7 +89,7 @@ function delegateModelsetSelection(){
       (async(mc_containter_id,ms_id,ms_v_id)=>{
 
         $('#clashviewSpinner').css({ display: "block" })
-        $('#forgeSpinner').css({ display: "block" })
+        $('#APSSpinner').css({ display: "block" })
 
         global_clashBreakdownView.reset()
         //refresh clash data
@@ -101,10 +101,10 @@ function delegateModelsetSelection(){
         if(r)
            r = await global_clashBreakdownView.initBreakdownList(mc_containter_id,ms_id,ms_v_id)
         if(r)
-          global_forgeViewer.launchViewer(global_msSet._docsMap)
+          global_APSViewer.launchViewer(global_msSet._docsMap)
 
         $('#clashviewSpinner').css({ display: "none" })
-        $('#forgeSpinner').css({ display: "none" })
+        $('#APSSpinner').css({ display: "none" })
  
       })(mc_containter_id,ms_id,ms_v_id)
   })
@@ -112,7 +112,7 @@ function delegateModelsetSelection(){
 
 function delegateBreakdownModelChange(){
   $(document).on('click', '#models_list .dropdown-item', function(e) {
-    if(global_msSet._docsMap.length> Object.keys(global_forgeViewer._clashDocToModel).length){
+    if(global_msSet._docsMap.length> Object.keys(global_APSViewer._clashDocToModel).length){
       alert('not all models are loaded in viewer. try after a moment!')
       return
     } 
@@ -196,7 +196,7 @@ function delegateRefreshClash(){
       if(r)
          r = await global_clashRawView.produceClashRawTable(mc_containter_id,ms_id,ms_v_id,true)
       if(r)
-         global_forgeViewer.launchViewer(global_msSet._docsMap)
+         global_APSViewer.launchViewer(global_msSet._docsMap)
 
     })(mc_containter_id,ms_id,ms_v_id)  
     

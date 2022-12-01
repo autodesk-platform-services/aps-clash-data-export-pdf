@@ -23,7 +23,7 @@ class ClashPDF {
             const clashInsJsonObj = global_clashRawView._clashInsJsonObj
             const clashJsonObj = global_clashRawView._clashJsonObj
             const matrixView = global_clashMatrixView._matrixView
-            const clashDocIdToModel = global_forgeViewer._clashDocToModel
+            const clashDocIdToModel = global_APSViewer._clashDocToModel
             const docsMap = global_msSet._docsMap
 
             //start a PDF doc
@@ -128,7 +128,7 @@ class ClashPDF {
                 var dist = filter[0].dist
                 var status = filter[0].status
 
-                global_forgeViewer.isolateClash([{ Ldid: Ldid, Rdid: Rdid, Lvid: Lvid, Rvid: Rvid }])
+                global_APSViewer.isolateClash([{ Ldid: Ldid, Rdid: Rdid, Lvid: Lvid, Rvid: Rvid }])
 
                 var bloburl = await this.getOneSnapshot()
                 var blob = await this.getBlobFromUrl(bloburl)
@@ -177,7 +177,7 @@ class ClashPDF {
 
     async  getOneSnapshot() {
         return new Promise(function (resolve, reject) {
-            global_forgeViewer._viewer.getScreenShot(500, 500,
+            global_APSViewer._viewer.getScreenShot(500, 500,
                 bloburl => {
                     resolve(bloburl)
                 }
@@ -220,9 +220,9 @@ class ClashPDF {
     }
 
     async drawHeadLogo(doc){
-        var logo = await this.getBase64Image("./img/autodesk_text.png");   
+        var logo = await this.getBase64Image("https://cdn.autodesk.io/autodesk.png");   
         doc.addImage(logo, 'PNG', 10, 10, 50, 10); 
-        logo = await this.getBase64Image("./img/autodesk-forge.png");  
+        logo = await this.getBase64Image("https://cdn.autodesk.io/logo/black/stacked.png");  
         doc.addImage(logo, 'PNG', 270, 5, 15, 15); 
     }
 

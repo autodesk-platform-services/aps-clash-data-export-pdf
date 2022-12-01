@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Model Coordinaition </title>
-    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="https://cdn.autodesk.io/favicon.ico">
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
@@ -46,7 +46,7 @@
     <script src="./js/mc.clash.matrix.view.js"></script>    
     <script src="./js/mc.clash.breakdown.view.js"></script>  
     <script src="./js/mc.clash.pdf.js"></script>   
-    <script src="./js/ForgeViewer.js"></script>   
+    <script src="./js/APSViewer.js"></script>   
     <script src="./index.js"></script>  
     
   <body>
@@ -75,7 +75,7 @@
           </ul>
 
           <ul class="navbar-nav ml-auto mx-auto">
-            <img alt="Autodesk Forge" src="/img/autodesk-forge.png" height="30" />  
+            <img alt="Autodesk APS" src="https://cdn.autodesk.io/logo/black/stacked.png" height="30" />  
             <a class="navbar-brand" href="#">BIM 360 Model Coordination API Demo - PDF Exporter</a> 
           </ul>
 
@@ -87,7 +87,7 @@
               <a class="nav-link" href="#" id="configHelp"> Config</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://github.com/xiaodongliang/bim360-node.js-issues.api" target="_blank"> GitHub</a>
+              <a class="nav-link" href="" target="_blank"> GitHub</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" id="signInButton"><span class="fas fa-user-tie" id="signInProfileImage" ></span>
@@ -107,7 +107,7 @@
             <div id="clashview">
               <div style="padding-top: 100px; text-align: center;">
                 <button class="btn btn-lg btn-primary" id="iconlogin">
-                  <img src="https://github.com/Autodesk-Forge/learn.forge.viewhubmodels/raw/master/img/autodesk_text.png"
+                  <img src="https://cdn.autodesk.io/autodesk.png"
                     height="20"> Sign in
                 </button>
                 <br />
@@ -120,8 +120,8 @@
           </div>
         </div>
         <div class="col-sm-8 fill">
-          <div id="forgeViewer">
-          <div id="forgeSpinner" class="spinner-border" style="display:none;margin: auto">
+          <div id="APSViewer">
+          <div id="APSSpinner" class="spinner-border" style="display:none;margin: auto">
           <span class="sr-only">Loading...</span>
           </div>
           </div>
@@ -129,8 +129,8 @@
       </div>
     </div>
 
-    <img id="adsklogo" src="/img/autodesk-logo.png" style="display:none" height="10"/> 
-    <img id="forgelogo" src="/img/autodesk-forge.png" style="display:none" height="15"/> 
+    <img id="adsklogo" src="https://cdn.autodesk.io/autodesk.png" style="display:none" height="10"/> 
+    <img id="APSlogo" src="https://cdn.autodesk.io/logo/black/stacked.png" style="display:none" height="15"/> 
 
    </body>  
 </html>

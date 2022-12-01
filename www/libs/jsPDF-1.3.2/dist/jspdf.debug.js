@@ -12174,7 +12174,7 @@ Q\n";
   						if (flush == Z_FULL_FLUSH) {
   							// state.head[s.hash_size-1]=0;
   							for (i = 0; i < hash_size/*-1*/; i++)
-  								// forget history
+  								// APS history
   								head[i] = 0;
   						}
   					}

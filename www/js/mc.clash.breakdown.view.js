@@ -59,7 +59,7 @@ class ClashBreakdownView {
         var Ldid = mainModelClashDocId
         for (var Lvid in breakview_thismodel) {
             
-            var leftObjName = global_forgeViewer._clashDocToModel[Ldid].model.getInstanceTree().getNodeName(Lvid)
+            var leftObjName = global_APSViewer._clashDocToModel[Ldid].model.getInstanceTree().getNodeName(Lvid)
             //var leftObjName = <also feasible from Index Result of MC API>
 
             var first_level_data = {
@@ -72,7 +72,7 @@ class ClashBreakdownView {
             var first_level_index = data.push(first_level_data) - 1
 
             for (var Rdid in breakview_thismodel[Lvid]) {
-                var RModelName = global_forgeViewer._clashDocToModel[Rdid].name
+                var RModelName = global_APSViewer._clashDocToModel[Rdid].name
 
                 var secodlevel_data = {
                     type:'model',
@@ -86,7 +86,7 @@ class ClashBreakdownView {
                 for (let i in breakview_thismodel[Lvid][Rdid]) {
 
                     var Rvid = breakview_thismodel[Lvid][Rdid][i]  
-                    var rightObjName = global_forgeViewer._clashDocToModel[Rdid].model.getInstanceTree().getNodeName(Rvid)
+                    var rightObjName = global_APSViewer._clashDocToModel[Rdid].model.getInstanceTree().getNodeName(Rvid)
                     //var rightObjName = <also feasible from Index Result of MC API>
 
                     var thirdlevel_data = {
@@ -184,7 +184,7 @@ class ClashBreakdownView {
                 }
                 else {
                     //second / third level node., group clashes or single clash
-                    global_forgeViewer.isolateClash(dataJson.clashes)
+                    global_APSViewer.isolateClash(dataJson.clashes)
                 }   
             } 
         });
