@@ -18,15 +18,8 @@
 ## Description
 This repository demonstrates advanced viewing of clash raw data by Model Coordination API and demos exporting a PDF report on the clashes the user is interested in. 
  
-## Thumbnail
-
-![thumbnail](/help/main.png)
-
-## Live version
-
-Live version: [bim360-clash-pdf-exporter.herokuapp.com](https://bim360-clash-pdf-exporter.herokuapp.com)
-
-> To use this sample with your BIM 360 you need to "Enable Custom Integrations". At the app top-right, click **Config** to get detailed steps.
+# Thumbnail
+![thumbnail](./thumbnail.png)
 
 Recording: [this video](https://youtu.be/eb-yXJ9LjIw) on how to play the demo. 
 
